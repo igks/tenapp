@@ -42,18 +42,29 @@ class HomeController extends Controller
         return view('home', compact('matches'));
     }
 
-    public function edit(Matches $matches)
+    public function edit(int $id)
     {
-        $match = Matches::find($matches->id);
+        $match = Matches::find($id);
         return view('form', compact('match')); 
     }
 
-    public function update(Request $request, Matches $matches)
+    public function update(Request $request, int $id)
     {
         $request->validate(Matches::rules());
-        $matches->update(request()->all());
+        $match = Matches::find($id);
+        if($match != null)
+        {
+            $match->update(request()->all());
+        }
 
-        $matches = Matches::all();
-        return view('home', compact('matches'));
+        return redirect()->route('home');
+    }
+
+    public function destroy(int $id)
+    {
+        $match = Matches::find($id);
+        if($match != null){
+            $match->delete();
+        }
     }
 }

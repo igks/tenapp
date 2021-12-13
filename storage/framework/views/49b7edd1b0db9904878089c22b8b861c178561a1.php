@@ -46,7 +46,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="date"
-                            name="date" value="<?php echo e(isset($player) ? $player['date'] : old('date')); ?>"
+                            name="date" value="<?php echo e(isset($match) ? $match['date'] : old('date')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -75,7 +75,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="time"
-                            name="time" value="<?php echo e(isset($player) ? $player['time'] : old('time')); ?>"
+                            name="time" value="<?php echo e(isset($match) ? $match['time'] : old('time')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['time'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -106,7 +106,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="location"
-                            name="location" value="<?php echo e(isset($player) ? $player['location'] : old('location')); ?>"
+                            name="location" value="<?php echo e(isset($match) ? $match['location'] : old('location')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['location'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -135,7 +135,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="table"
-                            name="table" value="<?php echo e(isset($player) ? $player['table'] : old('table')); ?>"
+                            name="table" value="<?php echo e(isset($match) ? $match['table'] : old('table')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['table'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -251,7 +251,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_a_1"
-                            name="score_a_1" value="<?php echo e(isset($player) ? $player['score_a_1'] : old('score_a_1')); ?>"
+                            name="score_a_1" value="<?php echo e(isset($match) ? $match['score_a_1'] : old('score_a_1')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_a_1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -280,7 +280,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_b_1"
-                            name="score_b_1" value="<?php echo e(isset($player) ? $player['score_b_1'] : old('score_b_1')); ?>"
+                            name="score_b_1" value="<?php echo e(isset($match) ? $match['score_b_1'] : old('score_b_1')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_b_1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -311,7 +311,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_a_2"
-                            name="score_a_2" value="<?php echo e(isset($player) ? $player['score_a_2'] : old('score_a_2')); ?>"
+                            name="score_a_2" value="<?php echo e(isset($match) ? $match['score_a_2'] : old('score_a_2')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_a_2'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -340,7 +340,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_b_2"
-                            name="score_b_2" value="<?php echo e(isset($player) ? $player['score_b_2'] : old('score_b_2')); ?>"
+                            name="score_b_2" value="<?php echo e(isset($match) ? $match['score_b_2'] : old('score_b_2')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_b_2'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -371,7 +371,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_a_3"
-                            name="score_a_3" value="<?php echo e(isset($player) ? $player['score_a_3'] : old('score_a_3')); ?>"
+                            name="score_a_3" value="<?php echo e(isset($match) ? $match['score_a_3'] : old('score_a_3')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_a_3'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -400,7 +400,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_b_3"
-                            name="score_b_3" value="<?php echo e(isset($player) ? $player['score_b_3'] : old('score_b_3')); ?>"
+                            name="score_b_3" value="<?php echo e(isset($match) ? $match['score_b_3'] : old('score_b_3')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_b_3'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -431,7 +431,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_a_4"
-                            name="score_a_4" value="<?php echo e(isset($player) ? $player['score_a_4'] : old('score_a_4')); ?>"
+                            name="score_a_4" value="<?php echo e(isset($match) ? $match['score_a_4'] : old('score_a_4')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_a_4'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -460,7 +460,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_b_4"
-                            name="score_b_4" value="<?php echo e(isset($player) ? $player['score_b_4'] : old('score_b_4')); ?>"
+                            name="score_b_4" value="<?php echo e(isset($match) ? $match['score_b_4'] : old('score_b_4')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_b_4'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -491,7 +491,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_a_5"
-                            name="score_a_5" value="<?php echo e(isset($player) ? $player['score_a_5'] : old('score_a_5')); ?>"
+                            name="score_a_5" value="<?php echo e(isset($match) ? $match['score_a_5'] : old('score_a_5')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_a_5'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -520,7 +520,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" id="score_b_5"
-                            name="score_b_5" value="<?php echo e(isset($player) ? $player['score_b_5'] : old('score_b_5')); ?>"
+                            name="score_b_5" value="<?php echo e(isset($match) ? $match['score_b_5'] : old('score_b_5')); ?>"
                             autocomplete="off">
                         <?php $__errorArgs = ['score_b_5'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -542,7 +542,7 @@ unset($__errorArgs, $__bag); ?>
               </div>
               <hr>
               <div>
-                <a href="<?php echo e(route('clubs.index')); ?>"  class="btn btn-secondary btn-rounded mr-2">Back</a>
+                <a href="<?php echo e(route('home')); ?>"  class="btn btn-secondary btn-rounded mr-2">Back</a>
                 <button type="submit" class="btn btn-primary btn-rounded">Submit</button>
               </div>
           </form>
@@ -640,6 +640,51 @@ unset($__errorArgs, $__bag); ?>
         }
       });
 
+      <?php if(isset($match)): ?>
+        <?php
+          $match = \App\Models\Matches::find($match->id);
+          $playerA1 = \App\Models\Player::find($match->player_a_1);
+          $playerA2 = \App\Models\Player::find($match->player_a_2);
+          $playerB1 = \App\Models\Player::find($match->player_b_1);
+          $playerB2 = \App\Models\Player::find($match->player_b_2);
+        ?>
+
+        <?php if($playerA1 != null): ?>
+            let playerA1 = {
+                id: '<?php echo e($playerA1->id); ?>',
+                name: '<?php echo e($playerA1->first_name . " " . $playerA1->last_name); ?>'
+            };
+            let playerA1Option = new Option(playerA1.name, playerA1.id, false, false);
+            $('#player_a_1').append(playerA1Option).trigger('change');
+        <?php endif; ?>
+
+        <?php if($playerA2 != null): ?>
+            let playerA2 = {
+                id: '<?php echo e($playerA2->id); ?>',
+                name: '<?php echo e($playerA2->first_name . " " . $playerA1->last_name); ?>'
+            };
+            let playerA2Option = new Option(playerA2.name, playerA2.id, false, false);
+            $('#player_a_2').append(playerA2Option).trigger('change');
+        <?php endif; ?>
+        
+        <?php if($playerB1 != null): ?>
+            let playerB1 = {
+                id: '<?php echo e($playerB1->id); ?>',
+                name: '<?php echo e($playerB1->first_name . " " . $playerB1->last_name); ?>'
+            };
+            let playerB1Option = new Option(playerB1.name, playerB1.id, false, false);
+            $('#player_b_1').append(playerB1Option).trigger('change');
+        <?php endif; ?>
+
+        <?php if($playerB2 != null): ?>
+            let playerB2 = {
+                id: '<?php echo e($playerB2->id); ?>',
+                name: '<?php echo e($playerB2->first_name . " " . $playerB2->last_name); ?>'
+            };
+            let playerB2Option = new Option(playerB2.name, playerB2.id, false, false);
+            $('#player_b_2').append(playerB2Option).trigger('change');
+       <?php endif; ?>
+    <?php endif; ?>
     });
   </script>
 <?php $__env->stopSection(); ?>

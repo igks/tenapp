@@ -39,7 +39,7 @@
                         <div class="form-group">
                         <label for="date">Date *</label>
                         <input type="date" class="form-control @error('date') is-invalid @enderror" id="date"
-                            name="date" value="{{ isset($player) ? $player['date'] : old('date') }}"
+                            name="date" value="{{ isset($match) ? $match['date'] : old('date') }}"
                             autocomplete="off">
                         @error('date')
                         <div class="invalid-feedback">
@@ -53,7 +53,7 @@
                         <div class="form-group">
                         <label for="time">Time *</label>
                         <input type="time" class="form-control @error('time') is-invalid @enderror" id="time"
-                            name="time" value="{{ isset($player) ? $player['time'] : old('time') }}"
+                            name="time" value="{{ isset($match) ? $match['time'] : old('time') }}"
                             autocomplete="off">
                         @error('time')
                         <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                         <div class="form-group">
                         <label for="location">Location *</label>
                         <input type="text" class="form-control @error('location') is-invalid @enderror" id="location"
-                            name="location" value="{{ isset($player) ? $player['location'] : old('location') }}"
+                            name="location" value="{{ isset($match) ? $match['location'] : old('location') }}"
                             autocomplete="off">
                         @error('location')
                         <div class="invalid-feedback">
@@ -83,7 +83,7 @@
                         <div class="form-group">
                         <label for="table">Table *</label>
                         <input type="text" class="form-control @error('table') is-invalid @enderror" id="table"
-                            name="table" value="{{ isset($player) ? $player['table'] : old('table') }}"
+                            name="table" value="{{ isset($match) ? $match['table'] : old('table') }}"
                             autocomplete="off">
                         @error('table')
                         <div class="invalid-feedback">
@@ -152,7 +152,7 @@
                         <div class="form-group">
                         <label for="score_a_1">Score Team A Set 1</label>
                         <input type="number" class="form-control @error('score_a_1') is-invalid @enderror" id="score_a_1"
-                            name="score_a_1" value="{{ isset($player) ? $player['score_a_1'] : old('score_a_1') }}"
+                            name="score_a_1" value="{{ isset($match) ? $match['score_a_1'] : old('score_a_1') }}"
                             autocomplete="off">
                         @error('score_a_1')
                         <div class="invalid-feedback">
@@ -166,7 +166,7 @@
                     <div class="form-group">
                         <label for="score_b_1">Score Team B Set 1</label>
                         <input type="number" class="form-control @error('score_b_1') is-invalid @enderror" id="score_b_1"
-                            name="score_b_1" value="{{ isset($player) ? $player['score_b_1'] : old('score_b_1') }}"
+                            name="score_b_1" value="{{ isset($match) ? $match['score_b_1'] : old('score_b_1') }}"
                             autocomplete="off">
                         @error('score_b_1')
                         <div class="invalid-feedback">
@@ -182,7 +182,7 @@
                         <div class="form-group">
                         <label for="score_a_2">Score Team A Set 2</label>
                         <input type="number" class="form-control @error('score_a_2') is-invalid @enderror" id="score_a_2"
-                            name="score_a_2" value="{{ isset($player) ? $player['score_a_2'] : old('score_a_2') }}"
+                            name="score_a_2" value="{{ isset($match) ? $match['score_a_2'] : old('score_a_2') }}"
                             autocomplete="off">
                         @error('score_a_2')
                         <div class="invalid-feedback">
@@ -196,7 +196,7 @@
                     <div class="form-group">
                         <label for="score_b_2">Score Team B Set 2</label>
                         <input type="number" class="form-control @error('score_b_2') is-invalid @enderror" id="score_b_2"
-                            name="score_b_2" value="{{ isset($player) ? $player['score_b_2'] : old('score_b_2') }}"
+                            name="score_b_2" value="{{ isset($match) ? $match['score_b_2'] : old('score_b_2') }}"
                             autocomplete="off">
                         @error('score_b_2')
                         <div class="invalid-feedback">
@@ -212,7 +212,7 @@
                         <div class="form-group">
                         <label for="score_a_3">Score Team A Set 3</label>
                         <input type="number" class="form-control @error('score_a_3') is-invalid @enderror" id="score_a_3"
-                            name="score_a_3" value="{{ isset($player) ? $player['score_a_3'] : old('score_a_3') }}"
+                            name="score_a_3" value="{{ isset($match) ? $match['score_a_3'] : old('score_a_3') }}"
                             autocomplete="off">
                         @error('score_a_3')
                         <div class="invalid-feedback">
@@ -226,7 +226,7 @@
                     <div class="form-group">
                         <label for="score_b_3">Score Team B Set 3</label>
                         <input type="number" class="form-control @error('score_b_3') is-invalid @enderror" id="score_b_3"
-                            name="score_b_3" value="{{ isset($player) ? $player['score_b_3'] : old('score_b_3') }}"
+                            name="score_b_3" value="{{ isset($match) ? $match['score_b_3'] : old('score_b_3') }}"
                             autocomplete="off">
                         @error('score_b_3')
                         <div class="invalid-feedback">
@@ -242,7 +242,7 @@
                         <div class="form-group">
                         <label for="score_a_4">Score Team A Set 4</label>
                         <input type="number" class="form-control @error('score_a_4') is-invalid @enderror" id="score_a_4"
-                            name="score_a_4" value="{{ isset($player) ? $player['score_a_4'] : old('score_a_4') }}"
+                            name="score_a_4" value="{{ isset($match) ? $match['score_a_4'] : old('score_a_4') }}"
                             autocomplete="off">
                         @error('score_a_4')
                         <div class="invalid-feedback">
@@ -256,7 +256,7 @@
                     <div class="form-group">
                         <label for="score_b_4">Score Team B Set 4</label>
                         <input type="number" class="form-control @error('score_b_4') is-invalid @enderror" id="score_b_4"
-                            name="score_b_4" value="{{ isset($player) ? $player['score_b_4'] : old('score_b_4') }}"
+                            name="score_b_4" value="{{ isset($match) ? $match['score_b_4'] : old('score_b_4') }}"
                             autocomplete="off">
                         @error('score_b_4')
                         <div class="invalid-feedback">
@@ -272,7 +272,7 @@
                         <div class="form-group">
                         <label for="score_a_5">Score Team A Set 5</label>
                         <input type="number" class="form-control @error('score_a_5') is-invalid @enderror" id="score_a_5"
-                            name="score_a_5" value="{{ isset($player) ? $player['score_a_5'] : old('score_a_5') }}"
+                            name="score_a_5" value="{{ isset($match) ? $match['score_a_5'] : old('score_a_5') }}"
                             autocomplete="off">
                         @error('score_a_5')
                         <div class="invalid-feedback">
@@ -286,7 +286,7 @@
                     <div class="form-group">
                         <label for="score_b_5">Score Team B Set 5</label>
                         <input type="number" class="form-control @error('score_b_5') is-invalid @enderror" id="score_b_5"
-                            name="score_b_5" value="{{ isset($player) ? $player['score_b_5'] : old('score_b_5') }}"
+                            name="score_b_5" value="{{ isset($match) ? $match['score_b_5'] : old('score_b_5') }}"
                             autocomplete="off">
                         @error('score_b_5')
                         <div class="invalid-feedback">
@@ -300,7 +300,7 @@
               </div>
               <hr>
               <div>
-                <a href="{{ route('clubs.index') }}"  class="btn btn-secondary btn-rounded mr-2">Back</a>
+                <a href="{{ route('home') }}"  class="btn btn-secondary btn-rounded mr-2">Back</a>
                 <button type="submit" class="btn btn-primary btn-rounded">Submit</button>
               </div>
           </form>
@@ -398,6 +398,51 @@
         }
       });
 
+      @if(isset($match))
+        @php
+          $match = \App\Models\Matches::find($match->id);
+          $playerA1 = \App\Models\Player::find($match->player_a_1);
+          $playerA2 = \App\Models\Player::find($match->player_a_2);
+          $playerB1 = \App\Models\Player::find($match->player_b_1);
+          $playerB2 = \App\Models\Player::find($match->player_b_2);
+        @endphp
+
+        @if($playerA1 != null)
+            let playerA1 = {
+                id: '{{ $playerA1->id }}',
+                name: '{{$playerA1->first_name . " " . $playerA1->last_name}}'
+            };
+            let playerA1Option = new Option(playerA1.name, playerA1.id, false, false);
+            $('#player_a_1').append(playerA1Option).trigger('change');
+        @endif
+
+        @if($playerA2 != null)
+            let playerA2 = {
+                id: '{{ $playerA2->id }}',
+                name: '{{$playerA2->first_name . " " . $playerA1->last_name}}'
+            };
+            let playerA2Option = new Option(playerA2.name, playerA2.id, false, false);
+            $('#player_a_2').append(playerA2Option).trigger('change');
+        @endif
+        
+        @if($playerB1 != null)
+            let playerB1 = {
+                id: '{{ $playerB1->id }}',
+                name: '{{$playerB1->first_name . " " . $playerB1->last_name}}'
+            };
+            let playerB1Option = new Option(playerB1.name, playerB1.id, false, false);
+            $('#player_b_1').append(playerB1Option).trigger('change');
+        @endif
+
+        @if($playerB2 != null)
+            let playerB2 = {
+                id: '{{ $playerB2->id }}',
+                name: '{{$playerB2->first_name . " " . $playerB2->last_name}}'
+            };
+            let playerB2Option = new Option(playerB2.name, playerB2.id, false, false);
+            $('#player_b_2').append(playerB2Option).trigger('change');
+       @endif
+    @endif
     });
   </script>
 @endsection

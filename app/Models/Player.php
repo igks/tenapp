@@ -34,7 +34,7 @@ class Player extends Model
       if($player != null){
         return $player->first_name . " " . $player->last_name;
       }else{
-        return " ";
+        return "-";
       }
     }
 

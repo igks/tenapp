@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
   Route::get('/home/create', 'App\Http\Controllers\HomeController@create')->name('home.create');
   Route::post('/home', 'App\Http\Controllers\HomeController@store')->name('home.store');
-  Route::get('/home/{home}/edit', 'App\Http\Controllers\HomeController@store')->name('home.edit');
+  Route::get('/home/{home}/edit', 'App\Http\Controllers\HomeController@edit')->name('home.edit');
   Route::put('/home/{home}', 'App\Http\Controllers\HomeController@update')->name('home.update');
+  Route::delete('/home/{home}', 'App\Http\Controllers\HomeController@destroy')->name('home.destroy');
 }); 
