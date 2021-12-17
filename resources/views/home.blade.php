@@ -142,7 +142,6 @@ use App\Models\Player;
 
         $('body').on('click', '#edit', function () {
             let data_id = $(this).data('id');
-            console.log(data_id);
             let url = "home/" + data_id + "/edit";
             $(location).attr('href', url);
         });

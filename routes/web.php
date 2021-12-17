@@ -35,4 +35,5 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/home/{home}/edit', 'App\Http\Controllers\HomeController@edit')->name('home.edit');
   Route::put('/home/{home}', 'App\Http\Controllers\HomeController@update')->name('home.update');
   Route::delete('/home/{home}', 'App\Http\Controllers\HomeController@destroy')->name('home.destroy');
+  Route::post('/home/score', 'App\Http\Controllers\HomeController@score')->name('home.score');
 }); 
