@@ -13,6 +13,8 @@ class Club extends Model
     protected $fillable = [
         'name', 'leader', 'phone', 'address', 'city', 'state'
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
     
     public static function rules($merge = [])
     {

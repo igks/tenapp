@@ -22,8 +22,12 @@ use App\Models\Player;
                                 </ol>
                             </nav>
                         </div>
-                        <a href="<?php echo e(route('home.create')); ?>" type="button" class="badge badge-primary">
+                        <a href="<?php echo e(route('home.create')); ?>" type="button" class="badge badge-primary mr-3">
                                 + Add New Match
+                            </a>
+
+                            <a href="<?php echo e(route('home.report')); ?>" type="button" class="badge badge-success">
+                                Download Report
                             </a>
                     </div>
 

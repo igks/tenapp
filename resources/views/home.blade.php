@@ -22,8 +22,12 @@ use App\Models\Player;
                                 </ol>
                             </nav>
                         </div>
-                        <a href="{{ route('home.create') }}" type="button" class="badge badge-primary">
+                        <a href="{{ route('home.create') }}" type="button" class="badge badge-primary mr-3">
                                 + Add New Match
+                            </a>
+
+                            <a href="{{ route('home.report') }}" type="button" class="badge badge-success">
+                                Download Report
                             </a>
                     </div>
 

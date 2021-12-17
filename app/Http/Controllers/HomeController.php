@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Matches;
 use Illuminate\Http\Request;
+use App\Exports\MatchExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -98,5 +100,10 @@ class HomeController extends Controller
         }
 
         return response()->json($totalScore);
+    }
+
+    public function report() 
+    {
+        return Excel::download(new MatchExport, 'matches.xlsx');
     }
 }

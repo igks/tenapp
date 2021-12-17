@@ -11,6 +11,8 @@ class Player extends Model
     protected $fillable = [
         'club_id', 'first_name', 'last_name','nik', 'date_of_birth','address','city','state', 'handed', 'bet_wood', 'fh_rubber', 'bh_rubber'
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
     
     public static function rules($merge = [])
     {
