@@ -21,10 +21,12 @@ Route::middleware(['auth'])->group(function () {
   Route::resource('clubs', 'App\Http\Controllers\Admin\ClubController');
   Route::get('club-list', 'App\Http\Controllers\Admin\ClubController@clubDataTable')->name('club-list');
   Route::get('club-select', 'App\Http\Controllers\Admin\ClubController@clubSelect')->name('club-select');
+  Route::get('club-report', 'App\Http\Controllers\Admin\ClubController@report')->name('club.report');
 
   Route::resource('players', 'App\Http\Controllers\Admin\PlayerController');
   Route::get('player-list', 'App\Http\Controllers\Admin\PlayerController@playerDataTable')->name('player-list');
   Route::get('player-select', 'App\Http\Controllers\Admin\PlayerController@playerSelect')->name('player-select');
+  Route::get('player-report', 'App\Http\Controllers\Admin\PlayerController@report')->name('players.report');
 
 
   Route::resource('profile','App\Http\Controllers\Admin\ProfileController');
@@ -36,4 +38,5 @@ Route::middleware(['auth'])->group(function () {
   Route::put('/home/{home}', 'App\Http\Controllers\HomeController@update')->name('home.update');
   Route::delete('/home/{home}', 'App\Http\Controllers\HomeController@destroy')->name('home.destroy');
   Route::post('/home/score', 'App\Http\Controllers\HomeController@score')->name('home.score');
+  Route::get('home-report', 'App\Http\Controllers\HomeController@report')->name('home.report');
 }); 

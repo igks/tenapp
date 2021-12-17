@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Club;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use App\Exports\ClubExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ClubController extends Controller
 {
@@ -78,5 +80,10 @@ class ClubController extends Controller
         }
 
         return response()->json($formattedClubs);
+    }
+
+    public function report() 
+    {
+        return Excel::download(new ClubExport, 'clubs.xlsx');
     }
 }

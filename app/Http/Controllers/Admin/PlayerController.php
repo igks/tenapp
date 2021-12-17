@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use DateTime;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use App\Exports\PlayerExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PlayerController extends Controller
 {
@@ -92,5 +94,10 @@ class PlayerController extends Controller
         }
 
         return response()->json($formattedPlayers);
+    }
+
+    public function report() 
+    {
+        return Excel::download(new PlayerExport, 'players.xlsx');
     }
 }
