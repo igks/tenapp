@@ -242,7 +242,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="handed">Handed</label>
+                  <label for="handed">Handed *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['handed'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -269,7 +269,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="bet_wood">Bet Wood</label>
+                  <label for="bet_wood">Bet Wood *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['bet_wood'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -296,7 +296,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="fh_rubber">Front Hand Rubber</label>
+                  <label for="fh_rubber">Front Hand Rubber *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['fh_rubber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -323,7 +323,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="bh_rubber">Back Hand Rubber</label>
+                  <label for="bh_rubber">Back Hand Rubber *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['bh_rubber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

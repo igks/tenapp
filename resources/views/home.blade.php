@@ -41,90 +41,92 @@ use App\Models\Player;
                 <div class="row">
 
                 @foreach($matches as $match)
-                    <div class="col-4">
-                            <div class="card p-3">
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <h5 class="font-weight-medium"><?= Player::getClubName($match->player_a_1);?></h5>
-                                        <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamA'];?></p>
-                                        <small class=" m-0"><?= Player::getName($match->player_a_1);?></small>
+                    @if(Player::getClubName($match->player_a_1) != "-")
+                        <div class="col-4">
+                                <div class="card p-3">
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <h5 class="font-weight-medium"><?= Player::getClubName($match->player_a_1);?></h5>
+                                            <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamA'];?></p>
+                                            <small class=" m-0"><?= Player::getName($match->player_a_1);?></small>
+                                            <br/>
+                                            <small class=" m-0"><?= Player::getName($match->player_a_2);?></small>
+                                        </div>
+                                        <div class="col-2 text-center">VS</div>
+                                        <div class="col-5 text-center">
+                                        <h5 class="font-weight-medium"><?= Player::getClubName($match->player_b_1);?></h5>
+                                        <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamB'];?></p>
+                                        <small class=" m-0"><?= Player::getName($match->player_b_1);?></small>
                                         <br/>
-                                        <small class=" m-0"><?= Player::getName($match->player_a_2);?></small>
-                                    </div>
-                                    <div class="col-2 text-center">VS</div>
-                                    <div class="col-5 text-center">
-                                    <h5 class="font-weight-medium"><?= Player::getClubName($match->player_b_1);?></h5>
-                                    <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamB'];?></p>
-                                    <small class=" m-0"><?= Player::getName($match->player_b_1);?></small>
-                                    <br/>
-                                    <small class=" m-0"><?= Player::getName($match->player_b_2);?></small>
+                                        <small class=" m-0"><?= Player::getName($match->player_b_2);?></small>
 
+                                        </div>
                                     </div>
-                                </div>
-                                <hr/>
+                                    <hr/>
 
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_a_1 != null ? $match->score_a_1 : "-";?></p>
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_a_1 != null ? $match->score_a_1 : "-";?></p>
+                                        </div>
+                                        <div class="col-2 text-center">-</div>
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_b_1 != null ? $match->score_b_1 : "-";?></p>
+                                        </div>
                                     </div>
-                                    <div class="col-2 text-center">-</div>
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_b_1 != null ? $match->score_b_1 : "-";?></p>
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_a_2 != null ? $match->score_a_2 : "-";?></p>
+                                        </div>
+                                        <div class="col-2 text-center">-</div>
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_b_2 != null ? $match->score_b_2 : "-";?></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_a_2 != null ? $match->score_a_2 : "-";?></p>
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_a_3 != null ? $match->score_a_3 : "-";?></p>
+                                        </div>
+                                        <div class="col-2 text-center">-</div>
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?=$match->score_b_3 != null ? $match->score_b_3 : "-";?></p>
+                                        </div>
                                     </div>
-                                    <div class="col-2 text-center">-</div>
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_b_2 != null ? $match->score_b_2 : "-";?></p>
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_a_4 != null ? $match->score_a_4 : "-";?></p>
+                                        </div>
+                                        <div class="col-2 text-center">-</div>
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_b_4 != null ? $match->score_b_4 : "-";?></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_a_3 != null ? $match->score_a_3 : "-";?></p>
-                                    </div>
-                                    <div class="col-2 text-center">-</div>
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?=$match->score_b_3 != null ? $match->score_b_3 : "-";?></p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_a_4 != null ? $match->score_a_4 : "-";?></p>
-                                    </div>
-                                    <div class="col-2 text-center">-</div>
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_b_4 != null ? $match->score_b_4 : "-";?></p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_a_5 != null ? $match->score_a_5 : "-"; ?></p>
-                                    </div>
-                                    <div class="col-2 text-center">-</div>
-                                    <div class="col-5 text-center">
-                                        <p class="font-weight-medium m-0"><?= $match->score_b_5 != null ? $match->score_b_5 : "-";?></p>
-                                    </div>
-                                </div>
-
-                                <hr/>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <a type="button" class="badge badge-warning badge-sm badge-rounded text-dark" id="edit" data-id="{{$match->id}}">Update</a>
-                                        <a type="button" class="badge badge-danger badge-sm badge-rounded text-light" id="delete" data-id="{{$match->id}}">Delete</a>
+                                    <div class="row">
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_a_5 != null ? $match->score_a_5 : "-"; ?></p>
+                                        </div>
+                                        <div class="col-2 text-center">-</div>
+                                        <div class="col-5 text-center">
+                                            <p class="font-weight-medium m-0"><?= $match->score_b_5 != null ? $match->score_b_5 : "-";?></p>
+                                        </div>
                                     </div>
 
-                                    <div class="col-6 text-right">
-                                        <small class="m-0 mt-4"><?= $match->location;?>, <?= $match->table;?></small>
-                                        <br/>
-                                        <small class="m-0"><?= $match->date;?>, <?= $match->time;?></small> 
-                                    </div> 
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a type="button" class="badge badge-warning badge-sm badge-rounded text-dark" id="edit" data-id="{{$match->id}}">Update</a>
+                                            <a type="button" class="badge badge-danger badge-sm badge-rounded text-light" id="delete" data-id="{{$match->id}}">Delete</a>
+                                        </div>
+
+                                        <div class="col-6 text-right">
+                                            <small class="m-0 mt-4"><?= $match->location;?>, <?= $match->table;?></small>
+                                            <br/>
+                                            <small class="m-0"><?= $match->date;?>, <?= $match->time;?></small> 
+                                        </div> 
+                                    </div>
+                                                    
                                 </div>
-                                                   
-                            </div>
-                    </div> 
+                        </div>
+                    @endif 
                 @endforeach
                 </div>
             </div>

@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="handed">Handed</label>
+                  <label for="handed">Handed *</label>
                   <input type="text" class="form-control @error('handed') is-invalid @enderror" id="handed"
                    name="handed" value="{{ isset($player) ? $player['handed'] : old('handed') }}"
                     autocomplete="off">
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="bet_wood">Bet Wood</label>
+                  <label for="bet_wood">Bet Wood *</label>
                   <input type="text" class="form-control @error('bet_wood') is-invalid @enderror" id="bet_wood"
                      name="bet_wood" value="{{ isset($player) ? $player['bet_wood'] : old('bet_wood') }}"
                     autocomplete="off">
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="fh_rubber">Front Hand Rubber</label>
+                  <label for="fh_rubber">Front Hand Rubber *</label>
                   <input type="text" class="form-control @error('fh_rubber') is-invalid @enderror" id="fh_rubber"
                     name="fh_rubber" value="{{ isset($player) ? $player['fh_rubber'] : old('fh_rubber') }}"
                     autocomplete="off">
@@ -165,7 +165,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="bh_rubber">Back Hand Rubber</label>
+                  <label for="bh_rubber">Back Hand Rubber *</label>
                   <input type="text" class="form-control @error('bh_rubber') is-invalid @enderror" id="bh_rubber"
                      name="bh_rubber" value="{{ isset($player) ? $player['bh_rubber'] : old('bh_rubber') }}"
                     autocomplete="off">

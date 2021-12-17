@@ -25,7 +25,11 @@ class Player extends Model
           'date_of_birth' => 'required|date',
           'address' => 'required',
           'city' => 'required',
-          'state' => 'required'
+          'state' => 'required',
+          'handed' => 'required',
+          'bet_wood' => 'required',
+          'fh_rubber' => 'required',
+          'bh_rubber' => 'required'
         ],
         $merge
       );

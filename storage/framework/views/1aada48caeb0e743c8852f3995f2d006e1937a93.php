@@ -6,6 +6,9 @@
   <div id="delete-alert" class="alert alert-success d-none">
     Data have been removed
    </div>
+   <div id="delete-alert-fail" class="alert alert-danger d-none">
+    Can not delete the club since 1 or more players is registered under this club!
+   </div>
    <div id="not-delete-alert" class="alert alert-danger d-none">
     Can not delete completed order
    </div>
@@ -151,7 +154,12 @@
                       });
                     },
                     error: function (data) {
-                        $(location).attr('href', window.location.origin + "/clubs");
+                      var element = document.getElementById("delete-alert-fail");
+                      element.classList.remove("d-none");
+                      setTimeout(()=>{
+                        element.classList.add("d-none");
+                      }, 3000);
+                        // $(location).attr('href', window.location.origin + "/clubs");
                     }
                 });
             }
