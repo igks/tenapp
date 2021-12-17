@@ -41,7 +41,8 @@ class Player extends Model
     }
 
     public function getClubName($id){
-      $clubId =  Player::find($id)->club_id;
+      $clubId =  Player::find($id)->club_id ?? null;
+      if($clubId == null) return "-";
       return Club::find($clubId)->name;
     }
 }
