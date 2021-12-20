@@ -35,6 +35,7 @@
   <?php endif; ?>
   <div class="page-breadcrumb">
     <div class="row">
+      <div class="col-6">
         <div class="col-7 align-self-center">
             <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Club List</h4>
             <div class="d-flex align-items-center">
@@ -46,6 +47,18 @@
                 </nav>
             </div>
         </div>
+      </div>
+      <div class="col-6">
+          <div class="nav-item float-right">
+            <a href="<?php echo e(route('clubs.create')); ?>" type="button" class="btn btn-primary btn-rounded mr-4">
+              + Add New Record
+            </a>
+
+            <a href="<?php echo e(route('club.report')); ?>" type="button" class="btn btn-success btn-rounded">
+              Export to Excel
+            </a>
+          </div>
+      </div>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -54,17 +67,6 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
             <div class="card-body">
-              <div class="mb-4">
-                <div class="nav-item my-2 float-right">
-                  <a href="<?php echo e(route('clubs.create')); ?>" type="button" class="btn btn-primary btn-rounded">
-                    + Add New Record
-                  </a>
-
-                  <a href="<?php echo e(route('club.report')); ?>" type="button" class="btn btn-success btn-rounded">
-                    Download Report
-                  </a>
-                </div>
-              </div>
               <div class="table-responsive">
                 <table class="table table-bordered yajra-datatable table-striped no-wrap">
                   <thead>

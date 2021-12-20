@@ -13,25 +13,29 @@ use App\Models\Player;
         <div class="page-wrapper">
             <div class="page-breadcrumb">
                 <div class="row">
-                    <div class="col-7 align-self-center">
+                    <div class="col-6">
+                        <div class="col-7 align-self-center">
                             <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Match Score</h4>
-                        <div class="d-flex align-items-center">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>" class="text-muted">Home</a></li>
-                                </ol>
-                            </nav>
+                            <div class="d-flex align-items-center">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb m-0 p-0">
+                                        <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>" class="text-muted">Home</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
                         </div>
-                        <a href="<?php echo e(route('home.create')); ?>" type="button" class="badge badge-primary mr-3">
-                                + Add New Match
-                            </a>
-
-                            <a href="<?php echo e(route('home.report')); ?>" type="button" class="badge badge-success">
-                                Download Report
-                            </a>
                     </div>
+                    <div class="col-6">
+                        <div class="nav-item float-right">
+                            <a href="<?php echo e(route('home.create')); ?>" type="button" class="btn btn-primary btn-rounded mr-4">
+                                + Add New Record
+                            </a>
 
-                    
+                            <a href="<?php echo e(route('home.report')); ?>" type="button" class="btn btn-success btn-rounded">
+                                Export to Excel
+                            </a>
+                        </div>
+                    </div>
                 </div>
               </div>
             <!-- ============================================================== -->

@@ -40,7 +40,7 @@ class PlayerExport implements FromCollection, WithHeadings, WithMapping
     {
         $index = 0;
         return [
-            Player::getClubName($player->club_id),
+            Player::getClubName($player->id),
             $player->first_name . " " . $player->last_name,
             $player->nik,
             Date::dateTimeToExcel(new DateTime($player->date_of_birth)),
