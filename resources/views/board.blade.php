@@ -13,7 +13,31 @@ use App\Models\Player;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Score</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+        crossorigin="anonymous">
+
+    <style>
+        .custom-container{
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+        }
+        .score{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40vh;
+            font-weight: bold;
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,40 +63,39 @@ use App\Models\Player;
         </div>
         <hr/>
         <div class="d-flex flex-row justify-content-around align-items-center">
-            <div class="w-50" style="position:relative;">
-            <div class="bg-dark w-100 text-center text-light " style="font-size: 30vh; border-radius: 10px;">
-                    <p id="pointA">0</p>
-                </div>
+            <div class="bg-dark w-50 custom-container">
+                <div class="bg-dark score" id="layerA1">0</div>
+                <div class="bg-dark score" id="layerA2">0</div>
                 <div style="position:absolute; top:5px; right: 10px; cursor:pointer;">
                     <span id="btn-point-A-Revert" class="badge badge-danger">Revert</span>
                 </div>
-                <div class="mt-2 d-flex flex-row justify-content-around">
-                    <div id="btn-point-A" class="btn btn-success w-50">Point</div>
+                <div style="position:absolute; bottom:-50px; width: 100%;cursor:pointer; display:flex; justify-content:center; align-items:center;">
+                    <span id="btn-point-A" class="btn btn-success w-50">Point</span>
                 </div>
             </div>
-
+            
             <div class="mx-4"><h4></h4></div>
 
-            <div class="w-50 " style="position:relative;">
-                <div class="bg-dark w-100 text-center text-light " style="font-size: 30vh; border-radius: 10px;">
-                    <p id="pointB">0</p>
-                </div>
+            <div class="bg-dark w-50 custom-container">
+                <div class="bg-dark score" id="layerB1">0</div>
+                <div class="bg-dark score" id="layerB2">0</div>
                 <div style="position:absolute; top:5px; right: 10px; cursor:pointer;">
                     <span id="btn-point-B-Revert" class="badge badge-danger">Revert</span>
                 </div>
-                <div class="mt-2 d-flex flex-row justify-content-around">
-                    <div id="btn-point-B" class="btn btn-success w-50">Point</div>
+                <div style="position:absolute; bottom:-50px; width: 100%;cursor:pointer; display:flex; justify-content:center; align-items:center;">
+                    <span id="btn-point-B" class="btn btn-success w-50">Point</span>
                 </div>
             </div>
+
         </div>
-        <hr/>
-        <div>
+        <hr style="margin-top: 100px;"/>
+        <div >
             <a href="{{ route('home') }}"  class="btn btn-secondary btn-rounded mr-2">Back</a>
             <button id="btn-save" type="button" class="btn btn-primary btn-rounded">Save</button>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         
         $(function() {
@@ -80,29 +103,42 @@ use App\Models\Player;
             let scoreA = 0;
             let scoreB = 0;
 
-            $("#pointA").html(scoreA);
-            $("#pointB").html(scoreB);
-
             $("#btn-point-A").click(function(){
                 scoreA += 1;
-                $("#pointA").text(scoreA);
+                $("#layerA1").text(scoreA);
+                $("#layerA2").slideUp('slow', function(){
+                $("#layerA2").text(scoreA);
+                $("#layerA2").show();
+                });
             });
 
             $("#btn-point-A-Revert").click(function(){
                 if(scoreA < 1) return;
                 scoreA -= 1;
-                $("#pointA").text(scoreA);
+                $("#layerA2").hide();
+                $("#layerA2").text(scoreA);
+                $("#layerA2").slideDown('slow', function(){
+                    $("#layerA1").text(scoreA);
+                });
             });
 
             $("#btn-point-B").click(function(){
                 scoreB += 1;
-                $("#pointB").text(scoreB);
+                $("#layerB1").text(scoreB);
+                $("#layerB2").slideUp('slow', function(){
+                $("#layerB2").text(scoreB);
+                $("#layerB2").show();
+                });
             });
 
             $("#btn-point-B-Revert").click(function(){
                 if(scoreB < 1) return;
                 scoreB -= 1;
-                $("#pointB").text(scoreB);
+                $("#layerB2").hide();
+                $("#layerB2").text(scoreB);
+                $("#layerB2").slideDown('slow', function(){
+                    $("#layerB1").text(scoreB);
+                });
             });
 
             $("#btn-save").click(function(){
@@ -126,8 +162,10 @@ use App\Models\Player;
                     },
                 })
                 .done(function(data){
-                    $("#pointA").text(0);
-                    $("#pointB").text(0);
+                    $("#layerA1").text(0);
+                    $("#layerA2").text(0);
+                    $("#layerB1").text(0);
+                    $("#layerB2").text(0);
                     $("#total-score-A").text(data.teamA);
                     $("#total-score-B").text(data.teamB);
                     $("#btn-save").text("Save");
@@ -136,8 +174,6 @@ use App\Models\Player;
                 });
             });
         });
-
-        
 
     </script>
 </body>
