@@ -35,7 +35,7 @@
                   <small>* is required</small>
                 </div>
                 <div class="form-group">
-                  <label for="code">Club Name *</label>
+                  <label for="code">Nama Club *</label>
                   <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                     name="name" value="{{ isset($club) ? $club['name'] : old('name') }}"
                     autocomplete="off">
@@ -46,7 +46,7 @@
                   @enderror
                 </div>
                 <div class="form-group">
-                  <label for="name">Club Leader Name *</label>
+                  <label for="name">Nama Ketua Club *</label>
                   <input type="text" class="form-control @error('leader') is-invalid @enderror" id="leader"
                     name="leader" value="{{ isset($club) ? $club['name'] : old('name') }}"
                     autocomplete="off">
@@ -57,7 +57,7 @@
                   @enderror
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone</label>
+                  <label for="phone">Telepon/HP *</label>
                   <input type="number" class="form-control @error('phone') is-invalid @enderror" id="phone"
                    name="phone" value="{{ isset($club) ? $club['phone'] : old('phone') }}"
                     autocomplete="off">
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="address">Address *</label>
+                  <label for="address">Alamat *</label>
                   <textarea class="form-control @error('phone') is-invalid @enderror" id="address" name="address" rows="3">{{ isset($club) ? $club['address'] : old('address') }}</textarea>
                   @error('address')
                   <div class="invalid-feedback">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="city">City *</label>
+                  <label for="city">Kota *</label>
                   <input type="text" class="form-control @error('city') is-invalid @enderror" id="city"
                      name="city" value="{{ isset($club) ? $club['city'] : old('city') }}"
                     autocomplete="off">
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="state">State *</label>
+                  <label for="state">Provinsi *</label>
                   <input type="text" class="form-control @error('state') is-invalid @enderror" id="state"
                      name="state" value="{{ isset($club) ? $club['state'] : old('state') }}"
                     autocomplete="off">

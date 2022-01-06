@@ -1,13 +1,10 @@
+@extends('layouts.template.app')
+@section('title', 'Player List')
 
-<?php $__env->startSection('title', 'Club List'); ?>
-
-<?php $__env->startSection('contents'); ?>
+@section('contents')
 <div class="page-wrapper">
   <div id="delete-alert" class="alert alert-success d-none">
     Data have been removed
-   </div>
-   <div id="delete-alert-fail" class="alert alert-danger d-none">
-    Can not delete the club since 1 or more players is registered under this club!
    </div>
    <div id="not-delete-alert" class="alert alert-danger d-none">
     Can not delete completed order
@@ -21,43 +18,41 @@
    <div id="not-update-status-alert" class="alert alert-danger d-none">
     Can not update completed order
    </div>
-  <?php if(session('status')): ?>
+  @if(session('status'))
   <div id="alert" class="alert alert-success">
-    <?php echo e(session('status')); ?>
-
+    {{ session('status') }}
   </div>
-  <?php endif; ?>
-  <?php if(session('error')): ?>
+  @endif
+  @if(session('error'))
   <div id="alert" class="alert alert-danger">
-    <?php echo e(session('error')); ?>
-
+    {{ session('error') }}
   </div>
-  <?php endif; ?>
+  @endif
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-6">
         <div class="col-7 align-self-center">
-            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Club List</h4>
-            <div class="d-flex align-items-center">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb m-0 p-0">
-                        <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>" class="text-muted">Home</a></li>
-                        <li class="breadcrumb-item text-muted active" aria-current="page">Club</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+              <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Player List</h4>
+              <div class="d-flex align-items-center">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb m-0 p-0">
+                          <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-muted">Home</a></li>
+                          <li class="breadcrumb-item text-muted active" aria-current="page">Player</li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
       </div>
       <div class="col-6">
-          <div class="nav-item float-right">
-            <a href="<?php echo e(route('clubs.create')); ?>" type="button" class="btn btn-primary btn-rounded mr-4">
-              + Add New Record
-            </a>
+        <div class="nav-item float-right">
+          <a href="{{ route('atlets.create') }}" type="button" class="btn btn-primary btn-rounded mr-4">
+            + Add New Record
+          </a>
 
-            <a href="<?php echo e(route('club.report')); ?>" type="button" class="btn btn-success btn-rounded">
-              Export to Excel
-            </a>
-          </div>
+          <a href="{{ route('atlets.report') }}" type="button" class="btn btn-success btn-rounded">
+           Export to Excel
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -73,11 +68,27 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Nama Ketua</th>
-                      <th>Telepon/HP</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Tempat Lahir</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Agama</th>
+                      <th>Status</th>
+                      <th>NIK</th>
                       <th>Alamat</th>
-                      <th>Kota</th>
-                      <th>Provinsi</th>
+                      <th>Kode Pos</th>
+                      <th>Nama Sekolah</th>
+                      <th>Nama Asal Club</th>
+                      <th>Tinggi Badan</th>
+                      <th>Berat Badan</th>
+                      <th>Telepon/HP</th>
+                      <th>Nama Ayah</th>
+                      <th>Nama Ibu</th>
+                      <th>Telepon/HP Wali</th>
+                      <th>Nama Kejuaraan</th>
+                      <th>Tahun Kejuaraan</th>
+                      <th>Tingkat Kejuaraan</th>
+                      <th>Tempat Kejuaraan</th>
+                      <th>Sertifikat</th>
                       <th>Pilihan</th>
                     </tr>
                   </thead>
@@ -91,9 +102,9 @@
   </div>
 </div>
 </div>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('scripts'); ?>
+@section('scripts')
 <script type="text/javascript">
   $(function () {
    
@@ -108,13 +119,13 @@
 
         $('body').on('click', '#show-detail', function () {
             let data_id = $(this).data('id');
-            let url = "clubs/" + data_id;
+            let url = "atlets/" + data_id;
             $(location).attr('href', url);
         });
 
         $('body').on('click', '#edit', function () {
             let data_id = $(this).data('id');
-            let url = "clubs/" + data_id + "/edit";
+            let url = "atlets/" + data_id + "/edit";
             $(location).attr('href', url);
         });
 
@@ -122,7 +133,7 @@
             let data_id = $(this).data("id");
             let confirmation = await showDialog("Are you sure?","You want to delete this data!","warning");
             if (confirmation) {
-                let url = window.location.origin + "/clubs/" + data_id;
+                let url = window.location.origin + "/atlets/" + data_id;
                 $.ajax({
                     url: url,
                     type: 'DELETE',
@@ -149,18 +160,14 @@
                         element.classList.add("d-none");
                       }, 3000);
                       $.ajax({
-                        url: window.location.origin + "/clubs",
+                        url: window.location.origin + "/atlets",
                         success: function(data){
+                         
                         }
                       });
                     },
                     error: function (data) {
-                      var element = document.getElementById("delete-alert-fail");
-                      element.classList.remove("d-none");
-                      setTimeout(()=>{
-                        element.classList.add("d-none");
-                      }, 3000);
-                        // $(location).attr('href', window.location.origin + "/clubs");
+                        $(location).attr('href', window.location.origin + "/atlets");
                     }
                 });
             }
@@ -173,34 +180,98 @@
       destroy: true,
       processing: true,
       serverSide: true,
-      ajax: `<?php echo e(url('club-list')); ?>`,
+      ajax: `{{ url('atlet-list') }}`,
       columns: [{
               data: 'DT_RowIndex',
               name: 'DT_RowIndex'
           },
           {
-              data: 'name',
-              name: 'name'
+              data: 'nama',
+              name: 'nama'
           },
           {
-              data: 'leader',
-              name: 'leader'
+              data: 'tanggal_lahir',
+              name: 'tanggal_lahir'
           },
           {
-              data: 'phone',
-              name: 'phone'
+              data: 'tempat_lahir',
+              name: 'tempat_lahir'
           },
           {
-              data: 'address',
-              name: 'address'
+              data: 'jenis_kelamin',
+              name: 'jenis_kelamin'
           },
           {
-              data: 'city',
-              name: 'city'
+              data: 'agama',
+              name: 'agama'
           },
           {
-              data: 'state',
-              name: 'state'
+              data: 'status',
+              name: 'status'
+          },
+          {
+              data: 'nik',
+              name: 'nik'
+          },
+          {
+              data: 'alamat',
+              name: 'alamat'
+          },
+          {
+              data: 'kode_pos',
+              name: 'kode_pos'
+          },
+          {
+              data: 'nama_sekolah',
+              name: 'nama_sekolah'
+          },
+          {
+              data: 'club_id',
+              name: 'club_id'
+          },
+          {
+              data: 'tinggi',
+              name: 'tinggi'
+          },
+          {
+              data: 'berat',
+              name: 'berat'
+          },
+          {
+              data: 'telepon',
+              name: 'telepon'
+          },
+          {
+              data: 'nama_ayah',
+              name: 'nama_ayah'
+          },
+          {
+              data: 'nama_ibu',
+              name: 'nama_ibu'
+          },
+          {
+              data: 'telepon_wali',
+              name: 'telepon_wali'
+          },
+          {
+              data: 'nama_kejuaraan',
+              name: 'nama_kejuaraan'
+          },
+          {
+              data: 'tahun_kejuaraan',
+              name: 'tahun_kejuaraan'
+          },
+          {
+              data: 'tingkat_kejuaraan',
+              name: 'tingkat_kejuaraan'
+          },
+          {
+              data: 'tempat_kejuaraan',
+              name: 'tempat_kejuaraan'
+          },
+          {
+              data: 'sertifikat',
+              name: 'sertifikat'
           },
           {
               data: 'action',
@@ -212,5 +283,4 @@
     });
   }
 </script>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.template.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\application\TenApp\resources\views/club/index.blade.php ENDPATH**/ ?>
+@endsection

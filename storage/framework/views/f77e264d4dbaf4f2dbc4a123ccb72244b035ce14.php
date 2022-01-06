@@ -21,12 +21,11 @@
                               </span></a>
                       </li>
 
-                      <li class="sidebar-item"> <a class="sidebar-link" href="<?php echo e(route('players.index')); ?>"
+                      <li class="sidebar-item"> <a class="sidebar-link" href="<?php echo e(route('atlets.index')); ?>"
                               aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
                                   class="hide-menu">Players
                               </span></a>
                       </li>
-
               
                   </ul>
               </nav>

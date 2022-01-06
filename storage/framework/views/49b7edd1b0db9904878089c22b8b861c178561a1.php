@@ -560,7 +560,7 @@ unset($__errorArgs, $__bag); ?>
         placeholder: "Search club...",
         minimumInputLength: 2,
         ajax: {
-          url: "<?php echo e(route('player-select')); ?>",
+          url: "<?php echo e(route('atlet-select')); ?>",
           dataType: 'json',
           delay: 250,
           data: function(params){
@@ -581,7 +581,7 @@ unset($__errorArgs, $__bag); ?>
         placeholder: "Search club...",
         minimumInputLength: 2,
         ajax: {
-          url: "<?php echo e(route('player-select')); ?>",
+          url: "<?php echo e(route('atlet-select')); ?>",
           dataType: 'json',
           delay: 250,
           data: function(params){
@@ -602,7 +602,7 @@ unset($__errorArgs, $__bag); ?>
         placeholder: "Search club...",
         minimumInputLength: 2,
         ajax: {
-          url: "<?php echo e(route('player-select')); ?>",
+          url: "<?php echo e(route('atlet-select')); ?>",
           dataType: 'json',
           delay: 250,
           data: function(params){
@@ -623,7 +623,7 @@ unset($__errorArgs, $__bag); ?>
         placeholder: "Search club...",
         minimumInputLength: 2,
         ajax: {
-          url: "<?php echo e(route('player-select')); ?>",
+          url: "<?php echo e(route('atlet-select')); ?>",
           dataType: 'json',
           delay: 250,
           data: function(params){
@@ -643,16 +643,16 @@ unset($__errorArgs, $__bag); ?>
       <?php if(isset($match)): ?>
         <?php
           $match = \App\Models\Matches::find($match->id);
-          $playerA1 = \App\Models\Player::find($match->player_a_1);
-          $playerA2 = \App\Models\Player::find($match->player_a_2);
-          $playerB1 = \App\Models\Player::find($match->player_b_1);
-          $playerB2 = \App\Models\Player::find($match->player_b_2);
+          $playerA1 = \App\Models\Atlet::find($match->player_a_1);
+          $playerA2 = \App\Models\Atlet::find($match->player_a_2);
+          $playerB1 = \App\Models\Atlet::find($match->player_b_1);
+          $playerB2 = \App\Models\Atlet::find($match->player_b_2);
         ?>
 
         <?php if($playerA1 != null): ?>
             let playerA1 = {
                 id: '<?php echo e($playerA1->id); ?>',
-                name: '<?php echo e($playerA1->first_name . " " . $playerA1->last_name); ?>'
+                name: '<?php echo e($playerA1->nama); ?>'
             };
             let playerA1Option = new Option(playerA1.name, playerA1.id, false, false);
             $('#player_a_1').append(playerA1Option).trigger('change');
@@ -661,7 +661,7 @@ unset($__errorArgs, $__bag); ?>
         <?php if($playerA2 != null): ?>
             let playerA2 = {
                 id: '<?php echo e($playerA2->id); ?>',
-                name: '<?php echo e($playerA2->first_name . " " . $playerA1->last_name); ?>'
+                name: '<?php echo e($playerA2->nama); ?>'
             };
             let playerA2Option = new Option(playerA2.name, playerA2.id, false, false);
             $('#player_a_2').append(playerA2Option).trigger('change');
@@ -670,7 +670,7 @@ unset($__errorArgs, $__bag); ?>
         <?php if($playerB1 != null): ?>
             let playerB1 = {
                 id: '<?php echo e($playerB1->id); ?>',
-                name: '<?php echo e($playerB1->first_name . " " . $playerB1->last_name); ?>'
+                name: '<?php echo e($playerB1->nama); ?>'
             };
             let playerB1Option = new Option(playerB1.name, playerB1.id, false, false);
             $('#player_b_1').append(playerB1Option).trigger('change');
@@ -679,7 +679,7 @@ unset($__errorArgs, $__bag); ?>
         <?php if($playerB2 != null): ?>
             let playerB2 = {
                 id: '<?php echo e($playerB2->id); ?>',
-                name: '<?php echo e($playerB2->first_name . " " . $playerB2->last_name); ?>'
+                name: '<?php echo e($playerB2->nama); ?>'
             };
             let playerB2Option = new Option(playerB2.name, playerB2.id, false, false);
             $('#player_b_2').append(playerB2Option).trigger('change');

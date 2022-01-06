@@ -154,7 +154,6 @@
                       $.ajax({
                         url: window.location.origin + "/players",
                         success: function(data){
-                          updateBadge(data);
                         }
                       });
                     },

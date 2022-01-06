@@ -70,13 +70,13 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Leader</th>
-                      <th>Phone</th>
-                      <th>Address</th>
-                      <th>City</th>
-                      <th>State</th>
-                      <th>Action</th>
+                      <th>Nama</th>
+                      <th>Nama Ketua</th>
+                      <th>Telepon/HP</th>
+                      <th>Alamat</th>
+                      <th>Kota</th>
+                      <th>Provinsi</th>
+                      <th>Pilihan</th>
                     </tr>
                   </thead>
                 </table>
@@ -149,7 +149,6 @@
                       $.ajax({
                         url: window.location.origin + "/clubs",
                         success: function(data){
-                          updateBadge(data);
                         }
                       });
                     },

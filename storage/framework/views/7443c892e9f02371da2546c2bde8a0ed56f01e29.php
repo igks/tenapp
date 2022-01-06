@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\DateFormatter;
 use App\Models\Matches;
 use App\Models\Player;
 ?>
@@ -124,7 +125,7 @@ use App\Models\Player;
                                         <div class="col-6 text-right">
                                             <small class="m-0 mt-4"><?= $match->location;?>, <?= $match->table;?></small>
                                             <br/>
-                                            <small class="m-0"><?= $match->date;?>, <?= $match->time;?></small> 
+                                            <small class="m-0"><?= DateFormatter::format($match->date);?>, <?= $match->time;?></small> 
                                         </div> 
                                     </div>
                                                     

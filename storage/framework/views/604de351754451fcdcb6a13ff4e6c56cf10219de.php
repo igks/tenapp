@@ -35,7 +35,7 @@
                   <small>* is required</small>
                 </div>
                 <div class="form-group">
-                  <label for="code">Club Name *</label>
+                  <label for="code">Nama Club *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -61,7 +61,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="form-group">
-                  <label for="name">Club Leader Name *</label>
+                  <label for="name">Nama Ketua Club *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['leader'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -87,7 +87,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone</label>
+                  <label for="phone">Telepon/HP *</label>
                   <input type="number" class="form-control <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -114,7 +114,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="address">Address *</label>
+                  <label for="address">Alamat *</label>
                   <textarea class="form-control <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -139,7 +139,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="city">City *</label>
+                  <label for="city">Kota *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -166,7 +166,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="form-group">
-                  <label for="state">State *</label>
+                  <label for="state">Provinsi *</label>
                   <input type="text" class="form-control <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

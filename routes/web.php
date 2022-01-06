@@ -28,6 +28,10 @@ Route::middleware(['auth'])->group(function () {
   Route::get('player-select', 'App\Http\Controllers\Admin\PlayerController@playerSelect')->name('player-select');
   Route::get('player-report', 'App\Http\Controllers\Admin\PlayerController@report')->name('players.report');
 
+  Route::resource('atlets', 'App\Http\Controllers\Admin\AtletController');
+  Route::get('atlet-list', 'App\Http\Controllers\Admin\AtletController@atletDataTable')->name('atlet-list');
+  Route::get('atlet-select', 'App\Http\Controllers\Admin\AtletController@atletSelect')->name('atlet-select');
+  Route::get('atlet-report', 'App\Http\Controllers\Admin\AtletController@report')->name('atlets.report');
 
   Route::resource('profile','App\Http\Controllers\Admin\ProfileController');
 
