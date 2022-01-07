@@ -315,7 +315,7 @@
   <script type="text/javascript">
     $(function(){
       $('#player_a_1').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "{{route('atlet-select')}}",
@@ -327,6 +327,7 @@
             }
           },
           processResults: function (data) {
+              console.log(data);
               return {
                   results: data
               };
@@ -336,7 +337,7 @@
       });
 
       $('#player_a_2').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "{{route('atlet-select')}}",
@@ -357,7 +358,7 @@
       });
 
       $('#player_b_1').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "{{route('atlet-select')}}",
@@ -378,7 +379,7 @@
       });
 
       $('#player_b_2').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "{{route('atlet-select')}}",
@@ -391,6 +392,7 @@
           },
           processResults: function (data) {
               return {
+
                   results: data
               };
           },

@@ -119,7 +119,7 @@ class AtletController extends Controller
             ->make(true);
     }
 
-    public function playerSelect(Request $request){
+    public function atletSelect(Request $request){
         $term = trim($request->q);
         if(empty($term)){
             return response()->json([]);

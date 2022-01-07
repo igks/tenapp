@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Matches;
-use App\Models\Player;
+use App\Models\Atlet;
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +44,9 @@ use App\Models\Player;
     <div class="container">
         <div class="d-flex flex-row justify-content-around align-items-center mt-2">
             <div class="d-flex flex-column align-items-center">
-                <h1><?= Player::getClubName($match->player_a_1);?></h1>
-                <p><?= Player::getName($match->player_a_1);?></p>
-                <p><?= Player::getName($match->player_a_2);?></p>
+                <h1><?= Atlet::getClubName($match->player_a_1);?></h1>
+                <p><?= Atlet::getName($match->player_a_1);?></p>
+                <p><?= Atlet::getName($match->player_a_2);?></p>
                 <h2 id="total-score-A"><?= Matches::calculateTotal($match)['teamA'];?></h2>
             </div>
             <div>
@@ -55,9 +55,9 @@ use App\Models\Player;
                 </h3>
             </div>
             <div class="d-flex flex-column align-items-center">
-            <h1><?= Player::getClubName($match->player_b_1);?></h1>
-                <p><?= Player::getName($match->player_b_1);?></p>
-                <p><?= Player::getName($match->player_b_2);?></p>
+            <h1><?= Atlet::getClubName($match->player_b_1);?></h1>
+                <p><?= Atlet::getName($match->player_b_1);?></p>
+                <p><?= Atlet::getName($match->player_b_2);?></p>
                 <h2 id="total-score-B"><?= Matches::calculateTotal($match)['teamB'];?></h2>
             </div>
         </div>
@@ -91,7 +91,8 @@ use App\Models\Player;
         <hr style="margin-top: 100px;"/>
         <div >
             <a href="{{ route('home') }}"  class="btn btn-secondary btn-rounded mr-2">Back</a>
-            <button id="btn-save" type="button" class="btn btn-primary btn-rounded">Save</button>
+            <button id="btn-reset" type="button" class="btn btn-danger btn-rounded mr-5">Reset</button>
+            <button id="btn-save" type="button" class="btn btn-primary btn-rounded ml-5">Save</button>
         </div>
     </div>
 
@@ -142,8 +143,8 @@ use App\Models\Player;
             });
 
             $("#btn-save").click(function(){
-                $("#btn-save").text("Saving...");
                 if(scoreA + scoreB == 0) return;
+                $("#btn-save").text("Saving...");
 
                 let data = {
                     matchId: matchId,
@@ -172,6 +173,15 @@ use App\Models\Player;
                     scoreA = 0;
                     scoreB = 0;
                 });
+            });
+
+            $('#btn-reset').click(function(){
+                    $("#layerA1").text(0);
+                    $("#layerA2").text(0);
+                    $("#layerB1").text(0);
+                    $("#layerB2").text(0);
+                    scoreA = 0;
+                    scoreB = 0;
             });
         });
 

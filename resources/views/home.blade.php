@@ -2,7 +2,7 @@
 
 use App\Helpers\DateFormatter;
 use App\Models\Matches;
-use App\Models\Player;
+use App\Models\Atlet;
 ?>
 @extends('layouts.template.app')
 @section('title', 'PingPong Apps')
@@ -46,24 +46,24 @@ use App\Models\Player;
                 <div class="row">
 
                 @foreach($matches as $match)
-                    @if(Player::getClubName($match->player_a_1) != "-")
+                    @if(Atlet::getClubName($match->player_a_1) != "-")
                         <div class="col-4">
                                 <div class="card p-3">
                                     <div class="row">
                                         <div class="col-5 text-center">
-                                            <h5 class="font-weight-medium"><?= Player::getClubName($match->player_a_1);?></h5>
+                                            <h5 class="font-weight-medium"><?= Atlet::getClubName($match->player_a_1);?></h5>
                                             <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamA'];?></p>
-                                            <small class=" m-0"><?= Player::getName($match->player_a_1);?></small>
+                                            <small class=" m-0"><?= Atlet::getName($match->player_a_1);?></small>
                                             <br/>
-                                            <small class=" m-0"><?= Player::getName($match->player_a_2);?></small>
+                                            <small class=" m-0"><?= Atlet::getName($match->player_a_2);?></small>
                                         </div>
                                         <div class="col-2 text-center">VS</div>
                                         <div class="col-5 text-center">
-                                        <h5 class="font-weight-medium"><?= Player::getClubName($match->player_b_1);?></h5>
+                                        <h5 class="font-weight-medium"><?= Atlet::getClubName($match->player_b_1);?></h5>
                                         <p class="font-weight-medium m-0"><?= Matches::calculateTotal($match)['teamB'];?></p>
-                                        <small class=" m-0"><?= Player::getName($match->player_b_1);?></small>
+                                        <small class=" m-0"><?= Atlet::getName($match->player_b_1);?></small>
                                         <br/>
-                                        <small class=" m-0"><?= Player::getName($match->player_b_2);?></small>
+                                        <small class=" m-0"><?= Atlet::getName($match->player_b_2);?></small>
 
                                         </div>
                                     </div>

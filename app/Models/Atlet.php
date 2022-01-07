@@ -61,8 +61,17 @@ class Atlet extends Model
       );
     }
 
+    public function getName($id){
+      $atlet =  Atlet::find($id);
+      if($atlet != null){
+        return $atlet->nama;
+      }else{
+        return "-";
+      }
+    }
+
     public static function getClubName($id){
-        $clubId =  Player::find($id)->club_id ?? null;
+        $clubId =  Atlet::find($id)->club_id ?? null;
         if($clubId == null) return "-";
         return Club::find($clubId)->name;
       }

@@ -557,7 +557,7 @@ unset($__errorArgs, $__bag); ?>
   <script type="text/javascript">
     $(function(){
       $('#player_a_1').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "<?php echo e(route('atlet-select')); ?>",
@@ -569,6 +569,7 @@ unset($__errorArgs, $__bag); ?>
             }
           },
           processResults: function (data) {
+              console.log(data);
               return {
                   results: data
               };
@@ -578,7 +579,7 @@ unset($__errorArgs, $__bag); ?>
       });
 
       $('#player_a_2').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "<?php echo e(route('atlet-select')); ?>",
@@ -599,7 +600,7 @@ unset($__errorArgs, $__bag); ?>
       });
 
       $('#player_b_1').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "<?php echo e(route('atlet-select')); ?>",
@@ -620,7 +621,7 @@ unset($__errorArgs, $__bag); ?>
       });
 
       $('#player_b_2').select2({
-        placeholder: "Search club...",
+        placeholder: "Search player...",
         minimumInputLength: 2,
         ajax: {
           url: "<?php echo e(route('atlet-select')); ?>",
@@ -633,6 +634,7 @@ unset($__errorArgs, $__bag); ?>
           },
           processResults: function (data) {
               return {
+
                   results: data
               };
           },

@@ -3,7 +3,7 @@
 namespace App\Exports;
 
 use App\Models\Matches;
-use App\Models\Player;
+use App\Models\Atlet;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
@@ -51,10 +51,10 @@ class MatchExport implements FromCollection, WithHeadings, WithMapping
             $match->time,
             $match->location,
             $match->table,
-            Player::getName($match->player_a_1),
-            Player::getName($match->player_a_2),
-            Player::getName($match->player_b_1),
-            Player::getName($match->player_b_2),
+            Atlet::getName($match->player_a_1),
+            Atlet::getName($match->player_a_2),
+            Atlet::getName($match->player_b_1),
+            Atlet::getName($match->player_b_2),
             $match->score_a_1,
             $match->score_b_1,
             $match->score_a_2,
